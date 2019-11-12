@@ -71,7 +71,7 @@ class andyp_responsive_menus {
 				array(
 					// Menu Name
 					'menu' => '',
-					'sidebar' => '',
+                    'sidebar' => '',
 				),
 				$atts
 			)
@@ -82,8 +82,10 @@ class andyp_responsive_menus {
                 wp_nav_menu( array(
                     'menu' => $menu,
                     'items_wrap' => '<select onChange="window.location.href=this.value">%3$s</select>',
-                    'walker' => new andyp_walker()
-                ) );
+                    'walker' => new andyp_walker(),
+                    'container' => ''
+                ) );    
+                echo do_shortcode('[filtering_menu mobile=1]');
             echo '</div>';
         }
 
