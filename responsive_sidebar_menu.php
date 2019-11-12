@@ -31,7 +31,6 @@ class andyp_walker extends Walker_Nav_Menu {
 }
 
 
-
 class andyp_responsive_menus {
 
     /**
@@ -72,6 +71,7 @@ class andyp_responsive_menus {
 					// Menu Name
 					'menu' => '',
                     'sidebar' => '',
+                    'category_mobile' => '',
 				),
 				$atts
 			)
@@ -83,23 +83,42 @@ class andyp_responsive_menus {
                     'menu' => $menu,
                     'items_wrap' => '<select onChange="window.location.href=this.value">%3$s</select>',
                     'walker' => new andyp_walker(),
-                    'container' => ''
+                    'container' => '',
                 ) );    
-                echo do_shortcode('[filtering_menu mobile=1]');
             echo '</div>';
         }
 
         if ($sidebar != ''){
             echo '<div class="sidemenu__desktop">';
-                dynamic_sidebar( 'sidebar-tutorials' );
+                dynamic_sidebar( $sidebar );
+            echo '</div>';
+        }
+
+    
+        if ($category_mobile != ''){
+
+            echo '<div class="sidemenu__mobile">';
+                $categories = explode(',', $category_mobile);
+
+                echo '<select onChange="window.location.href=this.value">';
+                echo '<option>Wiki support</option>';
+                
+                foreach ($categories as $category){
+
+                    $postslist = get_posts( array( 'category' => $category, 'numberposts' => -1 ) );    
+                    foreach ($postslist as $post){
+                        echo '<option value="'.$post->guid.'">' . $post->post_title . '</option>';
+                    }
+
+                }
+                echo '</select>';
+                
             echo '</div>';
         }
              
         return ;
 
     }
-
-
 }
 
 new andyp_responsive_menus;
