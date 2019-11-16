@@ -124,8 +124,7 @@ class andyp_responsive_menus {
         // remove site url
         $url = str_replace(site_url(), '', $guid);
         // remove any domain up to the first slash. Add a slash back in.
-        $url = preg_replace('^.*?\/\/.*?\/', '/', $url);
-        var_dump($url);
+        $url = preg_replace('/^.*?\/\/.*?\//', '/', $url);
         return $url;
     }
 
