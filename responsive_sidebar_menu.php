@@ -107,7 +107,8 @@ class andyp_responsive_menus {
 
                     $postslist = get_posts( array( 'category' => $category, 'numberposts' => -1 ) );    
                     foreach ($postslist as $post){
-                        echo '<option value="'.$post->guid.'">' . $post->post_title . '</option>';
+                        var_dump($post);
+                        echo '<option value="'.$this->make_relative($post->guid).'">' . $post->post_title . '</option>';
                     }
 
                 }
@@ -119,6 +120,11 @@ class andyp_responsive_menus {
         return ;
 
     }
+
+    public function make_relative($guid){
+        return str_replace(site_url(), '', $guid);
+    }
+
 }
 
 new andyp_responsive_menus;
