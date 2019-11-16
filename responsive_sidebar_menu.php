@@ -107,7 +107,6 @@ class andyp_responsive_menus {
 
                     $postslist = get_posts( array( 'category' => $category, 'numberposts' => -1 ) );    
                     foreach ($postslist as $post){
-                        var_dump($post);
                         echo '<option value="'.$this->make_relative($post->guid).'">' . $post->post_title . '</option>';
                     }
 
@@ -122,7 +121,11 @@ class andyp_responsive_menus {
     }
 
     public function make_relative($guid){
-        return str_replace(site_url(), '', $guid);
+        // remove site url
+        $url = str_replace(site_url(), '', $guid);
+        // remove any domain up to the first slash. Add a slash back in.
+        $url = preg_replace('^.*?\/\/.*?\/', '/', $url);
+        return $url;
     }
 
 }
