@@ -8,7 +8,7 @@
  * @wordpress-plugin
  * Plugin Name:       _ANDYP - Responsive Sidebar Menus
  * Plugin URI:        http://londonparkour.com
- * Description:       Either a dynamic sidebar or a select dropdown, depending on width media query
+ * Description:       <strong>🩳SHORTCODE</strong> | <em>[andyp_responsive_menus]</em> | Either a dynamic sidebar or a select dropdown, depending on width media query
  * Version:           1.0.0
  * Author:            Andy Pearson
  * Author URI:        https://londonparkour.com
@@ -50,7 +50,7 @@ class andyp_responsive_menus {
      * @return void
      */
     public function create_shortcode(){
-         add_shortcode( 'andyp_responsive_menus', array( $this, 'render_shortcode' ) );
+        add_shortcode( 'andyp_responsive_menus', array( $this, 'render_shortcode' ) );
     }
 
     /**
@@ -115,7 +115,7 @@ class andyp_responsive_menus {
                 
             echo '</div>';
         }
-             
+
         return ;
 
     }
