@@ -16,6 +16,12 @@
  */
 
 
+//  ┌─────────────────────────────────────────────────────────────────────────┐
+//  │                    Register with ANDYP Plugins                          │
+//  └─────────────────────────────────────────────────────────────────────────┘
+require __DIR__.'/src/acf/andyp_plugin_register.php';
+
+
 class andyp_walker extends Walker_Nav_Menu {
 
 	// Displays start of an element. E.g '<li> Item Name'
