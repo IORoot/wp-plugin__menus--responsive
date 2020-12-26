@@ -2,9 +2,9 @@
 
 add_action( 'plugins_loaded', function() {
     do_action('register_andyp_plugin', [
-        'title'     => 'Responsive Menus',
+        'title'     => 'Menus - Responsive Menus',
         'icon'      => 'menu-open',
-        'color'     => '#29B6F6',
+        'color'     => '#66BB6A',
         'path'      => __FILE__,
     ]);
 } );

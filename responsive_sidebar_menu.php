@@ -6,7 +6,7 @@
  * @copyright 2020 LondonParkour
  * 
  * @wordpress-plugin
- * Plugin Name:       _ANDYP - Responsive Sidebar Menus
+ * Plugin Name:       _ANDYP - Menus - Responsive Sidebar Menus
  * Plugin URI:        http://londonparkour.com
  * Description:       <strong>🩳SHORTCODE</strong> | <em>[andyp_responsive_menus]</em> | Either a dynamic sidebar or a select dropdown, depending on width media query
  * Version:           1.0.0
